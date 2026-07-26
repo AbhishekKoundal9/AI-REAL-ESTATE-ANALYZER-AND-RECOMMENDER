@@ -1,0 +1,348 @@
+/* ==========================================================================
+   AI REAL ESTATE INVESTMENT ANALYZER - DARK GLASSMORPHISM STYLESHEET
+   Accents: Electric Purple (#8B5CF6) & Vibrant Cyan (#06B6D4)
+   ========================================================================== */
+
+:root {
+    --bg-dark: #090D16;
+    --bg-card: rgba(18, 24, 38, 0.75);
+    --bg-card-hover: rgba(28, 36, 56, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-glow: rgba(139, 92, 246, 0.3);
+    
+    --accent-purple: #8B5CF6;
+    --accent-purple-light: #A855F7;
+    --accent-cyan: #06B6D4;
+    --accent-cyan-light: #22D3EE;
+    --accent-green: #10B981;
+    --accent-amber: #F59E0B;
+    --accent-red: #EF4444;
+    
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    
+    --shadow-glow-purple: 0 0 25px rgba(139, 92, 246, 0.25);
+    --shadow-glow-cyan: 0 0 25px rgba(6, 182, 212, 0.25);
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+/* Glassmorphism Container */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    border-color: rgba(139, 92, 246, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), var(--shadow-glow-purple);
+}
+
+/* Navbar */
+.navbar-custom {
+    background: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.35rem;
+    background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-cyan-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    margin: 0 4px;
+    padding: 8px 16px !important;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FFFFFF !important;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Gradient Texts & Headings */
+.text-gradient-purple {
+    background: linear-gradient(135deg, #C084FC, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+    background: linear-gradient(135deg, #67E8F9, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Form Controls */
+.form-label {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.form-control, .form-select {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary) !important;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+    color: #FFFFFF;
+}
+
+.form-select option {
+    background-color: #0F172A;
+    color: #FFFFFF;
+}
+
+/* Buttons */
+.btn-purple-glow {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-purple-light));
+    color: #FFFFFF;
+    border: none;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    padding: 12px 24px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-purple-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(139, 92, 246, 0.6);
+    color: #FFFFFF;
+}
+
+.btn-cyan-glow {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-cyan-light));
+    color: #0F172A;
+    border: none;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    padding: 12px 24px;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-cyan-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(6, 182, 212, 0.6);
+    color: #0F172A;
+}
+
+/* Metric Display Cards */
+.metric-box {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-purple);
+}
+
+.metric-box.cyan-accent::before {
+    background: var(--accent-cyan);
+}
+
+.metric-box.green-accent::before {
+    background: var(--accent-green);
+}
+
+.metric-box.amber-accent::before {
+    background: var(--accent-amber);
+}
+
+.metric-val {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Status Badges */
+.badge-buy {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 6px 16px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+}
+
+.badge-hold {
+    background: rgba(245, 158, 11, 0.2);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    padding: 6px 16px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+}
+
+.badge-avoid {
+    background: rgba(239, 68, 68, 0.2);
+    color: #F87171;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 6px 16px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+}
+
+.badge-risk-low {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-risk-medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-risk-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: #F87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Agentic Loading Modal */
+.agent-step-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-radius: var(--radius-sm);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.agent-step-item.active {
+    border-color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.agent-step-item.completed {
+    border-color: var(--accent-green);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.spinner-glow {
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid rgba(139, 92, 246, 0.2);
+    border-left-color: var(--accent-purple);
+    border-right-color: var(--accent-cyan);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tables */
+.table-dark-custom {
+    color: var(--text-primary);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--glass-border);
+}
+
+.table-dark-custom th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.table-dark-custom td {
+    vertical-align: middle;
+}
+
+/* Viva Q&A Accordion */
+.accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    margin-bottom: 10px;
+    border-radius: var(--radius-sm) !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: rgba(15, 23, 42, 0.8);
+    color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--accent-purple-light);
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    background: rgba(11, 15, 23, 0.6);
+    color: var(--text-secondary);
+}
+
+/* Smooth Tab Transitions */
+.tab-pane {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
