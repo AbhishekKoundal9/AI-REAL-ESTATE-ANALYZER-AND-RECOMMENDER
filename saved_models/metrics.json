@@ -1,0 +1,15 @@
+{
+  "linear_regression": {
+    "name": "Linear Regression",
+    "mae": 15.39,
+    "rmse": 24.35,
+    "r2_score": 0.8888
+  },
+  "random_forest": {
+    "name": "Random Forest Regressor",
+    "mae": 7.27,
+    "rmse": 14.11,
+    "r2_score": 0.9626
+  },
+  "best_model": "Random Forest Regressor"
+}
