@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Real Estate Analyzer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Glassmorphic Dark Theme CSS -->
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-city me-2 text-gradient-purple"></i>
+                <span>AI Real Estate Analyzer</span>
+            </a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills ms-auto" id="mainTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"><i class="fas fa-house me-1"></i> Home</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="analyze-tab" data-bs-toggle="tab" data-bs-target="#analyze" type="button" role="tab"><i class="fas fa-microchip me-1"></i> Analyze Property</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="recommendations-tab" data-bs-toggle="tab" data-bs-target="#recommendations" type="button" role="tab"><i class="fas fa-thumbs-up me-1"></i> Recommendations</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab"><i class="fas fa-chart-line me-1"></i> Dashboard</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab"><i class="fas fa-clock-rotate-left me-1"></i> History</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-4">
+        <div class="tab-content" id="mainTabContent">
+            
+            <!-- PAGE 1: HOME -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <div class="row align-items-center py-5">
+                    <div class="col-lg-6">
+                        <span class="badge bg-purple-glow px-3 py-2 mb-3"><i class="fas fa-sparkles me-1"></i> AI Powered Real Estate Platform</span>
+                        <h1 class="display-4 fw-extrabold mb-3">
+                            Smart Property Valuation & <span class="text-gradient-purple">AI Investment</span> Analysis
+                        </h1>
+                        <p class="lead text-secondary mb-4">
+                            Predict property market prices accurately, calculate estimated ROI and rental yield, evaluate investment risk, and generate instant automated valuation reports powered by Artificial Intelligence.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <button class="btn btn-purple-glow" onclick="document.getElementById('analyze-tab').click()">
+                                <i class="fas fa-robot me-2"></i> Analyze Property
+                            </button>
+                            <button class="btn btn-cyan-glow" onclick="document.getElementById('recommendations-tab').click()">
+                                <i class="fas fa-search-location me-2"></i> Recommendations
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Property Picture Card -->
+                    <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+                        <div class="glass-card p-3 position-relative overflow-hidden">
+                            <div class="position-relative rounded-3 overflow-hidden">
+                                <img src="/static/images/property.jpg" alt="Modern Luxury Property" class="img-fluid rounded-3 w-100" style="max-height: 380px; object-fit: cover;">
+                                <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(to top, rgba(9, 13, 22, 0.95), transparent);">
+                                    <div class="d-flex justify-content-between align-items-center text-start">
+                                        <div>
+                                            <h5 class="fw-bold text-white mb-0">Luxury Modern Residences</h5>
+                                            <small class="text-cyan"><i class="fas fa-location-dot me-1"></i> Prime City Locations</small>
+                                        </div>
+                                        <span class="badge bg-purple-glow px-3 py-2"><i class="fas fa-shield-halved me-1"></i> AI Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Highlights Grid -->
+                <div class="row mt-4 g-4">
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="fs-2 text-purple mb-2"><i class="fas fa-brain"></i></div>
+                            <h5 class="fw-bold">Price Prediction</h5>
+                            <p class="text-secondary small mb-0">Estimates property value using advanced Machine Learning algorithms trained on comprehensive market statistics.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="fs-2 text-cyan mb-2"><i class="fas fa-chart-pie"></i></div>
+                            <h5 class="fw-bold">Investment Analytics</h5>
+                            <p class="text-secondary small mb-0">Computes 5-Year Capital ROI, annual Gross Rental Yield, weighted Investment Quality Score, and 1-Yr/3-Yr future estimates.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 h-100">
+                            <div class="fs-2 text-purple mb-2"><i class="fas fa-robot"></i></div>
+                            <h5 class="fw-bold">Automated AI Agent</h5>
+                            <p class="text-secondary small mb-0">Executes a complete 11-step evaluation workflow on a single button click, compiling findings into a downloadable PDF report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 2: ANALYZE PROPERTY -->
+            <div class="tab-pane fade" id="analyze" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-5 mb-4">
+                        <div class="glass-card p-4">
+                            <h4 class="fw-bold mb-3 d-flex align-items-center">
+                                <i class="fas fa-sliders text-purple me-2"></i> Property Specifications
+                            </h4>
+                            <form id="analyzeForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Property Location</label>
+                                    <select class="form-select" id="analyzeLocation" required>
+                                        <option value="">Loading locations...</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Total Built-Up Area (sq.ft.)</label>
+                                    <input type="number" class="form-control" id="analyzeSqft" value="1400" min="200" max="20000" required>
+                                </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-4">
+                                        <label class="form-label">BHK</label>
+                                        <input type="number" class="form-control" id="analyzeBhk" value="3" min="1" max="10" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Bathrooms</label>
+                                        <input type="number" class="form-control" id="analyzeBath" value="2" min="1" max="10" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Balcony</label>
+                                        <input type="number" class="form-control" id="analyzeBalcony" value="2" min="0" max="5" required>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Target Budget (Optional, Lakhs ₹)</label>
+                                    <input type="number" class="form-control" id="analyzeBudget" placeholder="e.g. 95.0" step="0.5">
+                                </div>
+                                <button type="submit" class="btn btn-purple-glow w-100 py-3">
+                                    <i class="fas fa-bolt me-2"></i> Analyze Property
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Results Column -->
+                    <div class="col-lg-7">
+                        <div id="resultsSection" style="display: none;">
+                            <!-- Header Recommendation Alert -->
+                            <div class="glass-card p-4 mb-4 border-glow">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <span class="text-secondary small text-uppercase tracking-wider">AI Agent Decision</span>
+                                        <h3 class="fw-bold mb-0">Investment Assessment</h3>
+                                    </div>
+                                    <div class="text-end">
+                                        <span id="resRecBadge" class="badge badge-buy fs-5">BUY</span>
+                                        <div class="mt-1"><span id="resRiskBadge" class="badge badge-risk-low">Low Risk</span></div>
+                                    </div>
+                                </div>
+                                <div class="border-top border-glass pt-3">
+                                    <h6 class="fw-bold text-purple mb-2">Recommendation Rationale:</h6>
+                                    <ul id="resReasonsList" class="list-unstyled mb-0 small"></ul>
+                                </div>
+                            </div>
+
+                            <!-- Metrics Grid -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="metric-box">
+                                        <div class="text-secondary small mb-1">Predicted Property Price</div>
+                                        <div class="metric-val text-purple" id="resPredictedPrice">₹0.00 Lakhs</div>
+                                        <div class="text-muted small" id="resPriceInr">(₹0)</div>
+                                        <div class="mt-2 text-cyan small" id="resPricePerSqft">₹0/sq.ft</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="metric-box green-accent">
+                                        <div class="text-secondary small mb-1">Estimated 5-Yr Capital ROI</div>
+                                        <div class="metric-val text-success" id="resRoi">0%</div>
+                                        <div class="text-muted small">Projected Total Appreciation</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-box cyan-accent">
+                                        <div class="text-secondary small mb-1">Gross Rental Yield</div>
+                                        <div class="metric-val text-cyan" id="resRentalYield">0%</div>
+                                        <div class="text-muted small">Annual Rental Return</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-box amber-accent">
+                                        <div class="text-secondary small mb-1">Investment Score</div>
+                                        <div class="metric-val text-warning" id="resScore">0/100</div>
+                                        <div class="text-muted small">Multi-factor Quality Index</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-box">
+                                        <div class="text-secondary small mb-1">Future Value Projections</div>
+                                        <div class="fw-bold text-light small mt-1">1-Yr: <span id="resFuture1Yr" class="text-purple">₹0 L</span></div>
+                                        <div class="fw-bold text-light small">3-Yr: <span id="resFuture3Yr" class="text-cyan">₹0 L</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI Insights Card -->
+                            <div class="glass-card p-4 mb-4">
+                                <h5 class="fw-bold mb-3 text-cyan"><i class="fas fa-lightbulb me-2"></i> AI Market Insights</h5>
+                                <div id="resInsightsList"></div>
+                            </div>
+
+                            <!-- PDF Download CTA -->
+                            <div class="text-end mb-4">
+                                <button class="btn btn-cyan-glow" id="downloadPdfBtn">
+                                    <i class="fas fa-file-pdf me-2"></i> Download Full PDF Investment Report
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="resultsPlaceholder" class="glass-card p-5 text-center text-muted">
+                            <i class="fas fa-microchip fa-3x mb-3 text-purple opacity-50"></i>
+                            <h5>Ready for Analysis</h5>
+                            <p class="small mb-0">Fill in the property details on the left and click "Analyze Property" to trigger the automated AI evaluation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 3: RECOMMENDATIONS -->
+            <div class="tab-pane fade" id="recommendations" role="tabpanel">
+                <div class="glass-card p-4 mb-4">
+                    <h4 class="fw-bold mb-3"><i class="fas fa-search-dollar me-2 text-cyan"></i> Property Recommendation Search</h4>
+                    <form id="recommendationForm" class="row g-3 align-items-end">
+                        <div class="col-md-4">
+                            <label class="form-label">Target Investment Budget (Lakhs ₹)</label>
+                            <input type="number" class="form-control" id="recBudget" value="85.0" step="1" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Preferred Location</label>
+                            <select class="form-select" id="recLocation"></select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">BHK</label>
+                            <select class="form-select" id="recBhk">
+                                <option value="1">1 BHK</option>
+                                <option value="2" selected>2 BHK</option>
+                                <option value="3">3 BHK</option>
+                                <option value="4">4 BHK</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-cyan-glow w-100">
+                                <i class="fas fa-filter me-1"></i> Match
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row" id="recommendationsGrid">
+                    <div class="col-12 text-center text-muted py-5">
+                        <p>Enter your budget above to find the Top 5 matching properties.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 4: DASHBOARD -->
+            <div class="tab-pane fade" id="dashboard" role="tabpanel">
+                <h4 class="fw-bold mb-4"><i class="fas fa-chart-pie me-2 text-purple"></i> Investment & Model Analytics Dashboard</h4>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="glass-card p-4 h-100">
+                            <h6 class="fw-bold mb-3">Property Price vs Area Market Average</h6>
+                            <div style="height: 260px;">
+                                <canvas id="priceComparisonChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="glass-card p-4 h-100">
+                            <h6 class="fw-bold mb-3">Future Value Growth Projection (1-Yr vs 3-Yr)</h6>
+                            <div style="height: 260px;">
+                                <canvas id="growthProjectionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="glass-card p-4 h-100">
+                            <h6 class="fw-bold mb-3">Investment Metrics Distribution</h6>
+                            <div style="height: 260px;">
+                                <canvas id="investmentMetricsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="glass-card p-4 h-100">
+                            <h6 class="fw-bold mb-3">Machine Learning Algorithm Comparison (LR vs RF)</h6>
+                            <div style="height: 260px;">
+                                <canvas id="modelComparisonChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 5: HISTORY -->
+            <div class="tab-pane fade" id="history" role="tabpanel">
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold mb-0"><i class="fas fa-database me-2 text-cyan"></i> Analysis History Log</h4>
+                        <button class="btn btn-sm btn-outline-light" onclick="loadHistory()"><i class="fas fa-sync me-1"></i> Refresh</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark-custom">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Specs</th>
+                                    <th>Predicted Price</th>
+                                    <th>ROI</th>
+                                    <th>Decision</th>
+                                    <th>PDF Report</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <tr><td colspan="9" class="text-center text-muted">Loading history...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Agentic Progress Loading Modal -->
+    <div class="modal fade" id="agentModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card border-purple p-3">
+                <div class="modal-body text-center">
+                    <div class="spinner-glow mx-auto mb-3"></div>
+                    <h5 class="fw-bold mb-1">AI Agent Working...</h5>
+                    <p class="text-secondary small mb-3">Executing 11-step investment evaluation pipeline</p>
+                    
+                    <div class="text-start small">
+                        <div id="step-1" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 1. Reading user property specifications</div>
+                        <div id="step-2" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 2. Searching area market rates</div>
+                        <div id="step-3" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 3. Predicting property price via Machine Learning</div>
+                        <div id="step-4" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 4. Finding Top 5 matching property recommendations</div>
+                        <div id="step-5" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 5. Calculating 5-Yr ROI & Gross Rental Yield</div>
+                        <div id="step-6" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 6. Computing Investment Quality Score & Risk</div>
+                        <div id="step-7" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 7. Generating AI Insights & BUY/HOLD/AVOID recommendation</div>
+                        <div id="step-8" class="agent-step-item"><i class="fas fa-circle-notch fa-spin me-2 text-purple"></i> 8. Rendering ReportLab PDF report & database record</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="/static/js/charts.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
